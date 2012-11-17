@@ -1,4 +1,20 @@
 Golfshop::Application.routes.draw do
+  get "orderitems/index"
+
+  get "orderitems/show"
+
+  get "orderitems/new"
+
+  get "orderitems/edit"
+
+  devise_for :users do
+resources :orders
+end
+resources :orders do
+resources :orderitems
+end
+
+
   get "cart/index"
 
   get "site/about"
@@ -20,6 +36,14 @@ Golfshop::Application.routes.draw do
 	match '/home' => 'site#home'
 
 	match '/cart/remove/:id' => 'cart#remove'
+
+	match '/clearCart' => 'cart#clearCart'
+
+ root :to => 'site#home'
+
+resources :orders do
+resources :orderitems
+end
 
 
   # The priority is based upon order of creation:
