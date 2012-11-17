@@ -21,8 +21,6 @@ Golfshop::Application.routes.draw do
 
 	match '/cart/remove/:id' => 'cart#remove'
 
-	match '/clearCart' => 'cart#clearCart'
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
