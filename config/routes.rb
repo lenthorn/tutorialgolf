@@ -1,4 +1,12 @@
 Golfshop::Application.routes.draw do
+  get "site/about"
+
+  get "site/contact"
+
+  get "site/home"
+
+  resources :items
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
